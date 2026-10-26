@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <title>SPARK</title>
+        <link href="css/archive.css" rel="stylesheet" type="text/css">
+        <link href="img/symbol 1.png" rel="shortcut icon" type="image/x-icon">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/symbol2.png" alt="Home 버튼">
+                </a>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="menu" id="menu">
+                <a href="#">About</a>
+                <a href="identity.html">Project</a>
+                <a href="designer.html">Designer</a>
+                <a href="archive.html">Archive</a>
+                <a href="https://www.instagram.com/deu_sigak/" target="_blank">
+                    Instagram
+                </a>
+            </nav>
+            <script src="js/hambuger.js"></script>
+        </header>
+        <main class="archive">
+            <div class="archive-header">
+                <div class="archive-title">
+                    <span class="eyebrow">SPARK EXHIBITION 2026</span>
+                    <h1>SPARK ARCHIVE<span>.</span></h1>
+                    <p>전시의 순간을 기록하고 공유합니다.</p>
+                </div>
+                <div class="admin-actions">
+                    <button id="loginBtn" type="button" class="outline-btn" onclick="document.getElementById('loginModal').hidden = false;">
+                        관리자 로그인
+                    </button>
+                    <button id="writeBtn" type="button" class="write-btn" hidden>
+                        + 게시물 등록
+                    </button>
+                    <button id="logoutBtn" type="button" class="outline-btn" hidden>
+                        로그아웃
+                    </button>
+                </div>
+            </div>
+
+            <section class="archive-feed">
+                <div id="postList" class="post-list"></div>
+                <p id="emptyMessage" class="empty-message" hidden>
+                    아직 등록된 게시물이 없습니다.
+                </p>
+                <p id="listStatus" class="status-text" role="status">
+                    게시물을 불러오는 중입니다...
+                </p>
+            </section>
+        </main>
+        <!-- 관리자 로그인 -->
+         <div id="loginModal" class="modal" hidden>
+            <div class="modal-panel">
+                <button id="closeLogin" type="button" class="close-btn" aria-label="닫기">X</button>
+                <h2>ADMIN LOGIN</h2>
+                <p class="modal-desc">관리자 계정으로 로그인하세요.</p>
+                <form id="loginForm">
+                    <label for="adminEmail">이메일</label>
+                    <input id="adminEmail" type="email" autocomplete="username" required>
+                    <label for="adminPassword">비밀번호</label>
+                    <input id="adminPassword" type="password" autocomplete="current-password" required>
+
+                    <button id="loginSubmit" class="submit-btn" type="submit">
+                        로그인
+                    </button>
+                    <p id="loginStatus" class="status-text" role="status"></p>
+                </form>
+            </div>
+         </div>
+
+         <!-- 관리자 게시물 작성 -->
+          <div id="writeModal" class="modal" hidden>
+            <div class="modal-panel">
+                <button id="closeWrite" type="button" class="close-btn" aria-label="닫기">X</button>
+                <h2>NEW ARCHIVE</h2>
+                <p class="modal-desc">사진과 전시 기록을 등록하세요.</p>
+                <form id="postForm">
+                    <label for="postImage">이미지</label>
+                    <input id="postImage" type="file" accept="image/jpeg,image/png,image/webp" required>
+                    <img id="imagePreview" class="preview" alt="업로드 이미지 미리보기" hidden>
+
+                    <label for="postText">게시물 내용</label>
+                    <textarea id="postText" maxlength="1000" placeholder="게시물 내용을 입력하세요." required></textarea>
+                    <button id="submitPost" class="submit-btn" type="submit">
+                        게시물 등록
+                    </button>
+                    <p id="formStatus" class="status-text" role="status"></p>
+                </form>
+            </div>
+          </div>
+          <footer>
+            <div class="footer-top">
+                <h2>2026 DEU VISUAL DESIGN GRAD<br>EXHIBITION</h2>
+                <div class="footer-logo">
+                    <img src="img/symbol2.png" alt="푸터 로고">
+                </div>
+            </div>
+            <div class="footer-middle">
+                <p class="Univ-name-KR">동의대학교 디자인조형학과 시각디자인 전공</p>
+                <p class="Univ-name-EN">DONG-EUI University Visual Design</p>
+            </div>
+            <div class="footer-bottom">
+                <p class="copy">Copyrights ⓒ 2026 DONG-EUI Univ. Visual Design. All Rights Reserved</p>
+                <p class="copy-KR">본 웹사이트에 게시된 모든 작품과 이미지의 저작권은 각 디자이너에게 있으며, 무단 복제 및 사용을 금지합니다.</p>
+                <p class="copy-EN">The copyright for all works and images posted on this website belongs to the respective designers, and unauthorized reproduction or use is prohibited</p>
+            </div>
+        </footer> 
+          <script type="module" src="js/archive.js"></script>
+    </body>
+</html>
