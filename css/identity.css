@@ -1,0 +1,301 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+*{margin: 0; padding: 0; font-family: 'Noto Sans KR','맑은 고딕', sans-serif; color: #333; box-sizing: border-box;}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    min-width: 320px;
+    padding-top: 60px;
+}
+/* 네비게이션 */
+header {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.08));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-radius: 0 0 30px 30px;
+}
+/* 로고 */
+.logo img{
+    width: 45px;
+    height: 20px;
+}
+/* 햄버거 버튼 */
+.hamburger {
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: none;
+    cursor: pointer;
+    border: none;
+}
+/* 햄버거 선 */
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #EB2254;
+    transition: 0.3s;
+}
+/* 메뉴 */
+.menu {
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    position: fixed;
+    top: 43px;
+    left: 0;
+    padding: 30px;
+    right: 5px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    background-color: white;
+    text-align: right;
+    z-index: 999;
+}
+.menu a{
+    color: #787878;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.menu a:nth-child(2) {
+    color: #EB2254;
+}
+.menu a:last-child {
+    margin-top: 20px;
+}
+/* 메뉴 활성화 */
+.menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.menu.active a{
+    opacity: 1;
+    transform: translateX(0);
+}
+.menu.active a:nth-child(1) { transition-delay: 0.05s; }
+.menu.active a:nth-child(2) { transition-delay: 0.10s; }
+.menu.active a:nth-child(3) { transition-delay: 0.15s; }
+.menu.active a:nth-child(4) { transition-delay: 0.20s; }
+.menu.active a:nth-child(5) { transition-delay: 0.25s; }
+
+/*첫 번째 선 */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+/* 두 번째 선 */
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+/* 세 번째 선 */
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* 프로젝트 메뉴 */
+.project-nav {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+    margin-top: 20px;
+}
+.project-nav a{
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 20px;
+    border: 1px solid #EB2254;
+    font-size: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background-color 0.3s, color 0.3s;
+    animation: fadeUp 0.5s ease both;
+}
+/* 탭 순차 등장 */
+.project-nav a:nth-child(1) { animation-delay: 0.05s; }
+.project-nav a:nth-child(2) { animation-delay: 0.15s; }
+.project-nav a:nth-child(3) { animation-delay: 0.25s; }
+.project-nav a:nth-child(4) { animation-delay: 0.35s; }
+
+/* 호버/터치 피드백 */
+.project-nav a:hover,
+.project-nav a:active {
+    background-color: #EB2254;
+    color: white;
+}
+.identity {
+    background-color: #EB2254;
+    color: white;
+    border: none;
+}
+/* 교과목 설명 */
+.content {
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    margin-top: 25px;
+}
+.title {
+    margin-bottom: 10px;
+    font-size: 28px;
+    animation: fadeUp 0.7s 0.3s ease both;
+}
+.text {
+    font-size: 13px;
+    animation: fadeUp 0.7s 0.45s ease both;
+}
+
+.work-list{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+.work-item {
+    width: calc((100% - 20px) / 2);
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: var(--delay, 0s);
+}
+.work-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.work-item a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #eee;
+}
+.work-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.work-item a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #EB2254;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+.work-item a:hover img,
+.work-item a:active img {
+    transform: scale(1.05);
+}
+.work-item a:hover::after,
+.work-item a:active::after {
+    opacity: 0.25;
+}
+.work-item p {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* 푸터 */
+footer {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    padding: 20px;
+}
+.footer-top {
+    border-bottom: 1px solid #EB2254;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.footer-top h2 {
+    font-size: 20px;
+    letter-spacing: -2px;
+}
+.footer-logo img{
+    width: 90px;
+    height: 55px;
+}
+.footer-middle {
+    width: 100%;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #EB2254;
+    margin-bottom: 20px;
+}
+.Univ-name-KR {
+    font-size: 16px;
+    color: #EB2254;
+    font-weight: 700;
+}
+.Univ-name-EN {
+    font-size: 15px;
+    color: #4b4b4b;
+    margin-bottom: 5px;
+}
+.footer-bottom {
+    width: 100%;
+}
+.copy {
+    color: #4b4b4b;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.copy-KR {
+    color: #4b4b4b;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+.copy-EN {
+    color: #4b4b4b;
+    font-size: 13px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+    .menu a, .work-list { opacity: 1; transform: none;}
+}
+
+@media (min-width: 768px) {
+    .work-list { padding: 20px 40px; }
+    .work-item { width: calc((100% - 40px) / 3); }
+}
