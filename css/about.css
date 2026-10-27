@@ -144,7 +144,7 @@ header:has(.menu.active) {
     margin-bottom: 14px;
 }
 .about-lead {
-    font-size: 12px;
+    font-size: clamp(11px, 3vw, 13px);
     margin-bottom: 30px;
 }
 .about-sub {
@@ -160,10 +160,17 @@ header:has(.menu.active) {
     pointer-events: none;
     fill: none;
     stroke: white;
-    stroke-dasharray: 0.6;
+    stroke-dasharray: 1.5;
     stroke-width: 2.5px;
     stroke-linecap: round;
     overflow: visible;
+}
+.ster polygon {
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-dasharray: 1.5;
+    stroke-linecap: round;
 }
 /* 별 위치/크기 */
 .star-1 { width: 120px; top: 15%; left: -30px; }
@@ -242,12 +249,12 @@ header:has(.menu.active) {
     margin-top: 30px;
 }
 .exhibition h2 {
-    font-size: 15px;
+    font-size: clamp(13px, 3.8vw, 15px);
     color: #EB2254;
 }
 .exhibition h1 {
     position: relative;
-    font-size: 25px;
+    font-size: clamp(19px, 6vw, 23px);
     margin-bottom: 40px;
 }
 
@@ -287,7 +294,7 @@ header:has(.menu.active) {
 .lead-2,
 .lead-3,
 .lead-4 {
-    font-size: 13px;
+    font-size: clamp(11px, 2.9vw, 13px);
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
@@ -317,11 +324,11 @@ header:has(.menu.active) {
     transform: translateY(0);
 }
 .visual h2 {
-    font-size: 15px;
+    font-size: clamp(13px, 3.8vw, 15px);
     color: #EB2254;
 }
 .visual h1 {
-    font-size: 25px;
+    font-size: clamp(19px, 6vw, 23px);
     margin-bottom: 40px;
 }
 .visual-text {
@@ -359,7 +366,7 @@ header:has(.menu.active) {
     margin-bottom: 15px;
 }
 .visual-lead {
-    font-size: 11px;
+    font-size: clamp(11px, 2.9vw, 13px);
     margin-bottom: 15px;
 }
 .color-box {
@@ -423,11 +430,11 @@ header:has(.menu.active) {
     padding: 20px;
 }
 .location h2 {
-    font-size: 15px;
+    font-size: clamp(13px, 3.8vw, 15px);
     color: #EB2254;
 }
 .location h1 {
-    font-size: 25px;
+    font-size: clamp(19px, 6vw, 23px);
     margin-bottom: 40px;
 }
 .map {
@@ -456,15 +463,16 @@ header:has(.menu.active) {
 }
 .title-EN {
     color: #EB2254;
-    font-size: 15px;
+    font-size: clamp(13px, 3.4%, 15px);
     font-weight: 600;
 }
 .title-KR {
     color: #B2B2B2;
-    font-size: 14px;
+    font-size: clamp(11px, 2.8vw, 13px);
+    padding-top: 3px;
 }
 .period-text {
-    font-size: 14px;
+    font-size: clamp(11px, 3.3vw, 13px);
     margin-bottom: 10px;
 }
 .hours-box {
@@ -478,7 +486,7 @@ header:has(.menu.active) {
     margin-bottom: 10px;
 }
 .hours-text {
-    font-size: 14px;
+    font-size: clamp(11px, 3.3vw, 13px);
 }
 .venue-box {
     width: 100%;
@@ -487,7 +495,7 @@ header:has(.menu.active) {
     margin-bottom: 15px;
 }
 .venue-text {
-    font-size: 14px;
+    font-size: clamp(11px, 3.3vw, 13px);
     margin-bottom: 10px;
 }
 .adress-box {
@@ -497,7 +505,7 @@ header:has(.menu.active) {
     margin-bottom: 15px;
 }
 .adress-text {
-    font-size: 14px;
+    font-size: clamp(11px, 3.3vw, 13px);
     margin-bottom: 10px;
 }
 /* 위치 스크롤 등장 */
