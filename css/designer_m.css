@@ -185,7 +185,8 @@ header {
 }
 .text p {
     animation: fadeUp 0.5s 0.25s ease both;
-    font-size: 11px;
+    font-size: clamp(9px, 2.8vw, 12px);
+    white-space: nowrap;
 }
 
 .artwork-list {
