@@ -246,7 +246,7 @@ footer {
     margin-bottom: 20px;
 }
 .footer-top h2 {
-    font-size: 20px;
+    font-size: clamp(15px, 4.5vw, 20px);
     letter-spacing: -2px;
 }
 .footer-logo img{
@@ -255,17 +255,17 @@ footer {
 }
 .footer-middle {
     width: 100%;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     border-bottom: 1px solid #EB2254;
     margin-bottom: 20px;
 }
 .Univ-name-KR {
-    font-size: 16px;
+    font-size: clamp(14px, 4vw, 16px);
     color: #EB2254;
     font-weight: 700;
 }
 .Univ-name-EN {
-    font-size: 15px;
+    font-size: clamp(13px, 3.7vw, 15px);
     color: #4b4b4b;
     margin-bottom: 5px;
 }
@@ -274,17 +274,17 @@ footer {
 }
 .copy {
     color: #4b4b4b;
-    font-size: 13px;
+    font-size: clamp(9px, 2.7vw, 12px);
     margin-bottom: 10px;
 }
 .copy-KR {
     color: #4b4b4b;
-    font-size: 13px;
+    font-size: clamp(10px, 2.8vw, 12px);
     margin-bottom: 5px;
 }
 .copy-EN {
     color: #4b4b4b;
-    font-size: 13px;
+    font-size: clamp(10px, 2.8vw, 12px);
 }
 
 @media (prefers-reduced-motion: reduce) {
