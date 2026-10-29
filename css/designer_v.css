@@ -208,8 +208,31 @@ section.show .poster-images img {
 .text {
     font-size: 14px;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
+.designer-button {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+.designer {
+    padding: 10px 20px;
+    background: white;
+    border: none;
+    border: 1px solid #EB2254;
+    border-radius: 50px;
+}
+.designer:active {
+    background-color: #EB2254;
+}
+.designer a {
+    text-decoration: none;
+}
+.designer a:active {
+    color: white;
+}
 /* 푸터 */
 footer {
     width: 100%;
