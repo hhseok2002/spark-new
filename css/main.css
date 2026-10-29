@@ -321,7 +321,7 @@ header {
     height: auto;
 }
 .overview-text p {
-    font-size: 13px;
+    font-size: clamp(11px, 2.9vw, 13px);
 }
 
 /* 굿즈 슬라이드 */
