@@ -411,3 +411,520 @@ footer {
     color: #4b4b4b;
     font-size: clamp(10px, 2.8vw, 12px);
 }
+
+/* ========================================
+   태블릿: 768px ~ 1199px
+======================================== */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+    /* 헤더 */
+    header {
+        height: 76px;
+        padding: 0 40px;
+        border-radius: 0 0 35px 35px;
+    }
+
+    .logo img {
+        display: block;
+        width: 65px;
+        height: auto;
+    }
+
+    .hamburger {
+        width: 44px;
+        height: 44px;
+        padding: 11px 6px;
+    }
+
+    .menu {
+        top: 76px;
+        right: 0;
+        height: calc(100vh - 76px);
+        height: calc(100dvh - 76px);
+        padding: 40px;
+        gap: 28px;
+        overflow-y: auto;
+    }
+
+    .menu a {
+        font-size: clamp(30px, 3.5vw, 40px);
+    }
+
+    /* 아카이브 전체 */
+    .archive {
+        padding: 130px 40px 60px;
+    }
+
+    .archive-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 26px;
+        margin-bottom: 45px;
+    }
+
+    .archive-title {
+        min-width: 0;
+    }
+
+    .eyebrow {
+        font-size: 13px;
+    }
+
+    .archive-header h1 {
+        font-size: clamp(40px, 5.5vw, 62px);
+        line-height: 1.2;
+        letter-spacing: -1.5px;
+    }
+
+    .archive-header p {
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 1.8;
+        white-space: normal;
+        word-break: keep-all;
+    }
+
+    /* 관리자 버튼 */
+    .admin-actions {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .write-btn,
+    .outline-btn {
+        min-height: 46px;
+        padding: 12px 22px;
+        font-size: 15px;
+    }
+
+    /* 게시물 */
+    .archive-feed {
+        max-width: 900px;
+    }
+
+    .post-list {
+        gap: 50px;
+    }
+
+    .post-info {
+        padding: 24px 0 30px;
+    }
+
+    .post-meta {
+        flex-wrap: wrap;
+        gap: 10px 20px;
+        margin-bottom: 18px;
+    }
+
+    .post-meta h3 {
+        min-width: 0;
+        font-size: 21px;
+        overflow-wrap: anywhere;
+    }
+
+    .post-meta time {
+        font-size: 13px;
+    }
+
+    .post-content {
+        font-size: 17px;
+        line-height: 1.9;
+    }
+
+    .delete-btn {
+        min-height: 44px;
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .status-text,
+    .empty-message {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    /* 로그인·작성 팝업 */
+    .modal {
+        padding: 30px;
+    }
+
+    .modal-panel {
+        width: min(100%, 600px);
+        max-height: 90vh;
+        max-height: 90dvh;
+        padding: 45px 35px 35px;
+    }
+
+    .modal-panel h2 {
+        padding-right: 40px;
+        font-size: 30px;
+    }
+
+    .modal-desc {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .close-btn {
+        top: 12px;
+        right: 16px;
+        width: 44px;
+        height: 44px;
+    }
+
+    #loginForm,
+    #postForm {
+        gap: 14px;
+    }
+
+    #loginForm label,
+    #postForm label {
+        font-size: 16px;
+    }
+
+    #loginForm input,
+    #postForm input,
+    #postForm textarea {
+        min-width: 0;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    #postForm textarea {
+        min-height: 200px;
+    }
+
+    .submit-btn {
+        min-height: 50px;
+        font-size: 16px;
+    }
+
+    /* 푸터 */
+    footer {
+        margin-top: 40px;
+        padding: 35px 40px;
+    }
+
+    .footer-top {
+        align-items: center;
+        gap: 24px;
+        padding-bottom: 28px;
+        margin-bottom: 28px;
+    }
+
+    .footer-top h2 {
+        font-size: clamp(24px, 3vw, 34px);
+        line-height: 1.3;
+        letter-spacing: -1px;
+    }
+
+    .footer-logo {
+        flex-shrink: 0;
+    }
+
+    .footer-logo img {
+        display: block;
+        width: 120px;
+        height: auto;
+    }
+
+    .footer-middle {
+        padding-bottom: 28px;
+        margin-bottom: 28px;
+    }
+
+    .Univ-name-KR {
+        font-size: 20px;
+        line-height: 1.7;
+    }
+
+    .Univ-name-EN {
+        font-size: 17px;
+    }
+
+    .copy,
+    .copy-KR,
+    .copy-EN {
+        font-size: 12px;
+        line-height: 1.8;
+        overflow-wrap: break-word;
+    }
+}
+
+
+/* ========================================
+   데스크톱: 1200px 이상
+======================================== */
+@media screen and (min-width: 1200px) {
+
+    /* 헤더 */
+    header,
+    header:has(.menu.active) {
+        height: 88px;
+        padding: 0 clamp(50px, 5vw, 100px);
+        border-radius: 0 0 36px 36px;
+    }
+
+    .logo img {
+        display: block;
+        width: 80px;
+        height: auto;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    /* 가로 메뉴 */
+    header .menu {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: clamp(24px, 3vw, 56px);
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        overflow: visible;
+
+        background: transparent;
+        text-align: left;
+        transition: none;
+    }
+
+    header .menu a {
+        margin: 0;
+        font-size: clamp(16px, 1.2vw, 21px);
+        font-weight: 600;
+        opacity: 1;
+        transform: none;
+        transition: color 0.2s ease;
+    }
+
+    header .menu a:last-child {
+        margin-top: 0;
+    }
+
+    header .menu a:hover,
+    header .menu a:focus-visible {
+        color: #EB2254;
+    }
+
+    /* 아카이브 전체 */
+    .archive {
+        max-width: 1440px;
+        padding: 160px 60px 70px;
+    }
+
+    .archive-header {
+        align-items: flex-end;
+        gap: 40px;
+        margin-bottom: 70px;
+    }
+
+    .archive-title {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .eyebrow {
+        font-size: 15px;
+        letter-spacing: 2.5px;
+    }
+
+    .archive-header h1 {
+        font-size: clamp(50px, 4.3vw, 76px);
+        line-height: 1.2;
+        letter-spacing: -2px;
+    }
+
+    .archive-header p {
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 1.8;
+        white-space: normal;
+    }
+
+    /* 관리자 버튼 */
+    .admin-actions {
+        flex: 0 1 320px;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .write-btn,
+    .outline-btn {
+        min-height: 48px;
+        padding: 13px 24px;
+        font-size: 15px;
+    }
+
+    /* 게시물 1열 유지 */
+    .archive-feed {
+        max-width: 1100px;
+    }
+
+    .post-list {
+        gap: 75px;
+    }
+
+    .post-info {
+        padding: 30px 0 40px;
+    }
+
+    .post-meta {
+        flex-wrap: wrap;
+        gap: 12px 24px;
+        margin-bottom: 22px;
+    }
+
+    .post-meta h3 {
+        min-width: 0;
+        font-size: 25px;
+        overflow-wrap: anywhere;
+    }
+
+    .post-meta time {
+        font-size: 14px;
+    }
+
+    .post-content {
+        font-size: 18px;
+        line-height: 2;
+    }
+
+    .post-controls {
+        margin-top: 28px;
+    }
+
+    .delete-btn {
+        min-height: 44px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .status-text,
+    .empty-message {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    /* 로그인·작성 팝업 */
+    .modal {
+        padding: 40px;
+    }
+
+    .modal-panel {
+        width: min(100%, 640px);
+        max-height: 90vh;
+        max-height: 90dvh;
+        padding: 50px 45px 40px;
+        border-radius: 22px;
+    }
+
+    .modal-panel h2 {
+        padding-right: 40px;
+        font-size: 34px;
+    }
+
+    .modal-desc {
+        margin-bottom: 30px;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .close-btn {
+        top: 14px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 32px;
+    }
+
+    #loginForm,
+    #postForm {
+        gap: 16px;
+    }
+
+    #loginForm label,
+    #postForm label {
+        font-size: 16px;
+    }
+
+    #loginForm input,
+    #postForm input,
+    #postForm textarea {
+        min-width: 0;
+        padding: 16px;
+        font-size: 16px;
+    }
+
+    #postForm textarea {
+        min-height: 220px;
+    }
+
+    .preview {
+        max-height: 380px;
+    }
+
+    .submit-btn {
+        min-height: 54px;
+        font-size: 17px;
+    }
+
+    /* 푸터 */
+    footer {
+        margin-top: 50px;
+        padding: 50px clamp(60px, 6vw, 120px);
+    }
+
+    .footer-top {
+        align-items: center;
+        gap: 40px;
+        padding-bottom: 35px;
+        margin-bottom: 30px;
+    }
+
+    .footer-top h2 {
+        font-size: clamp(30px, 2.6vw, 46px);
+        line-height: 1.3;
+        letter-spacing: -1px;
+    }
+
+    .footer-logo {
+        flex-shrink: 0;
+    }
+
+    .footer-logo img {
+        display: block;
+        width: 160px;
+        height: auto;
+    }
+
+    .footer-middle {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+
+    .Univ-name-KR {
+        font-size: 23px;
+        line-height: 1.7;
+    }
+
+    .Univ-name-EN {
+        font-size: 19px;
+    }
+
+    .copy,
+    .copy-KR,
+    .copy-EN {
+        font-size: 13px;
+        line-height: 1.9;
+        overflow-wrap: break-word;
+    }
+}
