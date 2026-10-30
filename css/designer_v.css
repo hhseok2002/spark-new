@@ -167,6 +167,9 @@ section {
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
+section h1 {
+    font-size: clamp(20px, 6vw, 25px);
+}
 section.show {
     opacity: 1;
     transform: translateY(0);
