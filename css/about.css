@@ -645,3 +645,697 @@ footer {
     .venue-box::after,
     .adress-box::after { transform: scaleX(1);}
 }
+
+/* ========================================
+   태블릿: 768px ~ 1199px
+======================================== */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+    /* 헤더 */
+    header {
+        height: 76px;
+        padding: 0 40px;
+        border-radius: 0 0 35px 35px;
+    }
+
+    .logo img {
+        display: block;
+        width: 65px;
+        height: auto;
+    }
+
+    .hamburger {
+        width: 44px;
+        height: 44px;
+        padding: 11px 6px;
+    }
+
+    .menu {
+        top: 76px;
+        right: 0;
+        height: calc(100vh - 76px);
+        height: calc(100dvh - 76px);
+        padding: 40px;
+        gap: 28px;
+        overflow-y: auto;
+    }
+
+    .menu a {
+        font-size: clamp(30px, 3.5vw, 40px);
+    }
+
+    /* 히어로 */
+    .about-hero {
+        min-height: 700px;
+    }
+
+    .about-text {
+        left: 40px;
+        right: 40px;
+        z-index: 1;
+    }
+
+    .about-text h1 {
+        font-size: clamp(46px, 6vw, 68px);
+        margin-bottom: 24px;
+    }
+
+    .about-lead {
+        font-size: clamp(17px, 2vw, 22px);
+        line-height: 1.8;
+        margin-bottom: 32px;
+    }
+
+    .about-sub {
+        font-size: clamp(15px, 1.8vw, 19px);
+        line-height: 1.8;
+    }
+
+    /* 별 장식 */
+    .star-1 {
+        width: 180px;
+        top: 16%;
+        left: -40px;
+    }
+
+    .star-2 {
+        width: 280px;
+        top: 25%;
+        right: 4%;
+    }
+
+    .star-3 {
+        width: 55px;
+        top: 62%;
+        right: 28%;
+    }
+
+    .star-4 {
+        width: 190px;
+        top: 58%;
+        right: 4%;
+    }
+
+    .star-5 {
+        width: 120px;
+        top: 75%;
+        left: 35%;
+    }
+
+    .scroll-down {
+        bottom: 36px;
+    }
+
+    .scroll-down span {
+        font-size: 14px;
+    }
+
+    .arrow {
+        width: 13px;
+        height: 13px;
+        margin-top: 8px;
+    }
+
+    /* 본문 공통 */
+    .exhibition,
+    .visual,
+    .location {
+        padding: 40px;
+    }
+
+    .exhibition {
+        margin-top: 40px;
+        scroll-margin-top: 96px;
+    }
+
+    .visual,
+    .location {
+        margin-top: 30px;
+    }
+
+    .exhibition h2,
+    .visual h2,
+    .location h2 {
+        font-size: 19px;
+        margin-bottom: 8px;
+    }
+
+    .exhibition h1,
+    .visual h1,
+    .location h1 {
+        font-size: clamp(28px, 3.4vw, 38px);
+        line-height: 1.4;
+        margin-bottom: 45px;
+        word-break: keep-all;
+    }
+
+    .exhibition h1::after {
+        width: 85px;
+        bottom: -18px;
+    }
+
+    .lead-1,
+    .lead-2,
+    .lead-3,
+    .lead-4 {
+        font-size: 17px;
+        line-height: 1.9;
+        margin-bottom: 24px;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    /* 비주얼 */
+    .poster-frame {
+        width: min(100%, 620px);
+        margin: 0 auto 40px;
+    }
+
+    .visual h3 {
+        font-size: 21px;
+        margin-bottom: 16px;
+    }
+
+    .visual-lead {
+        font-size: 17px;
+        line-height: 1.9;
+        margin-bottom: 28px;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    .color-box {
+        gap: 20px;
+        margin-bottom: 36px;
+    }
+
+    .pink-box,
+    .blue-box {
+        width: 190px;
+        height: 155px;
+        margin-right: 0;
+        padding: 18px;
+    }
+
+    .color-name {
+        position: static;
+        margin-top: 0;
+        font-size: 18px;
+    }
+
+    .HEX-code {
+        left: 18px;
+        bottom: 42px;
+        font-size: 14px;
+    }
+
+    .RGB {
+        left: 18px;
+        bottom: 18px;
+        font-size: 14px;
+    }
+
+    /* 지도 */
+    .map {
+        height: 380px;
+        margin-bottom: 32px;
+    }
+
+    .map iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    /* 전시 정보 */
+    .information > div {
+        padding-bottom: 20px;
+        margin-bottom: 24px;
+    }
+
+    .title-box {
+        align-items: baseline;
+        gap: 14px;
+        margin-bottom: 12px;
+    }
+
+    .title-EN {
+        font-size: 20px;
+    }
+
+    .title-KR {
+        padding-top: 0;
+        font-size: 15px;
+    }
+
+    .period-text,
+    .hours-text,
+    .venue-text,
+    .adress-text {
+        font-size: 16px;
+        line-height: 1.9;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    /* 푸터 */
+    footer {
+        margin-top: 50px;
+        padding: 35px 40px;
+    }
+
+    .footer-top {
+        align-items: center;
+        gap: 24px;
+        padding-bottom: 28px;
+        margin-bottom: 28px;
+    }
+
+    .footer-top h2 {
+        font-size: clamp(24px, 3vw, 34px);
+        line-height: 1.3;
+        letter-spacing: -1px;
+    }
+
+    .footer-logo {
+        flex-shrink: 0;
+    }
+
+    .footer-logo img {
+        display: block;
+        width: 120px;
+        height: auto;
+    }
+
+    .footer-middle {
+        padding-bottom: 28px;
+        margin-bottom: 28px;
+    }
+
+    .Univ-name-KR {
+        font-size: 20px;
+        line-height: 1.7;
+    }
+
+    .Univ-name-EN {
+        font-size: 17px;
+    }
+
+    .copy,
+    .copy-KR,
+    .copy-EN {
+        font-size: 12px;
+        line-height: 1.8;
+        overflow-wrap: break-word;
+    }
+}
+
+
+/* ========================================
+   데스크톱: 1200px 이상
+======================================== */
+@media screen and (min-width: 1200px) {
+
+    /* 헤더 */
+    header,
+    header:has(.menu.active) {
+        height: 88px;
+        padding: 0 clamp(50px, 5vw, 100px);
+        border-radius: 0 0 36px 36px;
+    }
+
+    .logo img {
+        display: block;
+        width: 80px;
+        height: auto;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    /* 가로 메뉴 */
+    header .menu {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: clamp(24px, 3vw, 56px);
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        overflow: visible;
+
+        background: transparent;
+        text-align: left;
+        transition: none;
+    }
+
+    header .menu a {
+        margin: 0;
+        font-size: clamp(16px, 1.2vw, 21px);
+        font-weight: 600;
+        opacity: 1;
+        transform: none;
+        transition: color 0.2s ease;
+        transition-delay: 0s;
+    }
+
+    header .menu a:last-child {
+        margin-top: 0;
+    }
+
+    header .menu a:hover,
+    header .menu a:focus-visible {
+        color: #EB2254;
+    }
+
+    /* 히어로 */
+    .about-hero {
+        min-height: 740px;
+    }
+
+    .about-text {
+        top: 52%;
+        left: max(60px, calc((100% - 1320px) / 2));
+        right: 60px;
+        z-index: 1;
+    }
+
+    .about-text h1 {
+        font-size: clamp(64px, 6vw, 110px);
+        margin-bottom: 30px;
+        letter-spacing: -2px;
+    }
+
+    .about-lead {
+        font-size: clamp(21px, 1.7vw, 28px);
+        line-height: 1.8;
+        margin-bottom: 38px;
+    }
+
+    .about-sub {
+        font-size: clamp(18px, 1.3vw, 22px);
+        line-height: 1.9;
+    }
+
+    /* 별 장식 */
+    .star-1 {
+        width: clamp(180px, 17vw, 300px);
+        top: 15%;
+        left: -3%;
+    }
+
+    .star-2 {
+        width: clamp(280px, 27vw, 480px);
+        top: 22%;
+        right: 7%;
+    }
+
+    .star-3 {
+        width: 70px;
+        top: 65%;
+        right: 32%;
+    }
+
+    .star-4 {
+        width: clamp(180px, 17vw, 300px);
+        top: 60%;
+        right: 5%;
+    }
+
+    .star-5 {
+        width: 145px;
+        top: 77%;
+        left: 43%;
+    }
+
+    .scroll-down {
+        bottom: 40px;
+    }
+
+    .scroll-down span {
+        font-size: 15px;
+    }
+
+    .arrow {
+        width: 15px;
+        height: 15px;
+        margin-top: 10px;
+    }
+
+    /* 본문 공통 */
+    .exhibition,
+    .visual,
+    .location {
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 60px;
+        margin: 110px auto 0;
+    }
+
+    .exhibition {
+        scroll-margin-top: 120px;
+    }
+
+    .exhibition h2,
+    .visual h2,
+    .location h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .exhibition h1,
+    .visual h1,
+    .location h1 {
+        font-size: clamp(34px, 2.8vw, 46px);
+        line-height: 1.4;
+        margin-bottom: 50px;
+        word-break: keep-all;
+    }
+
+    .exhibition h1::after {
+        width: 110px;
+        height: 4px;
+        bottom: -20px;
+    }
+
+    /* 전시의도 */
+    .lead-1,
+    .lead-2,
+    .lead-3,
+    .lead-4 {
+        max-width: 1100px;
+        font-size: clamp(18px, 1.2vw, 21px);
+        line-height: 2;
+        margin-bottom: 28px;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    /* 왼쪽 포스터 / 오른쪽 설명 */
+    .visual-text {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: auto auto auto auto 1fr;
+        column-gap: clamp(40px, 5vw, 80px);
+        row-gap: 18px;
+        align-items: start;
+        overflow: visible;
+    }
+
+    .poster-frame {
+        grid-column: 1;
+        grid-row: 1 / 6;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .visual-text > h3:first-of-type {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .visual-text > .visual-lead:nth-of-type(1) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .visual-text > .color-box {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .visual-text > h3:last-of-type {
+        grid-column: 2;
+        grid-row: 4;
+    }
+
+    .visual-text > .visual-lead:nth-of-type(2) {
+        grid-column: 2;
+        grid-row: 5;
+    }
+
+    .visual h3 {
+        font-size: 25px;
+        margin-bottom: 0;
+    }
+
+    .visual-lead {
+        min-width: 0;
+        font-size: clamp(17px, 1.1vw, 20px);
+        line-height: 1.9;
+        margin-bottom: 8px;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    /* 컬러칩 */
+    .color-box {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        margin: 10px 0 24px;
+    }
+
+    .pink-box,
+    .blue-box {
+        width: 100%;
+        min-width: 0;
+        height: 180px;
+        margin-right: 0;
+        padding: 20px;
+    }
+
+    .color-name {
+        position: static;
+        margin-top: 0;
+        font-size: clamp(16px, 1.2vw, 21px);
+    }
+
+    .HEX-code {
+        left: 20px;
+        bottom: 48px;
+        font-size: 15px;
+    }
+
+    .RGB {
+        left: 20px;
+        bottom: 20px;
+        font-size: 15px;
+    }
+
+    /* 지도 */
+    .map {
+        height: clamp(420px, 32vw, 560px);
+        margin-bottom: 45px;
+    }
+
+    .map iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    /* 전시 정보 */
+    .information > div {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 32px;
+        align-items: start;
+        padding: 20px 0 26px;
+        margin-bottom: 10px;
+    }
+
+    .title-box {
+        width: auto;
+        align-items: baseline;
+        gap: 14px;
+        margin-bottom: 0;
+    }
+
+    .title-EN {
+        font-size: 22px;
+    }
+
+    .title-KR {
+        padding-top: 0;
+        font-size: 15px;
+    }
+
+    .period-text,
+    .hours-text,
+    .venue-text,
+    .adress-text {
+        min-width: 0;
+        font-size: 18px;
+        line-height: 1.9;
+        margin-bottom: 0;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    .hours-text-box {
+        min-width: 0;
+        margin-bottom: 0;
+    }
+
+    /* 푸터 */
+    footer {
+        margin-top: 110px;
+        padding: 50px clamp(60px, 6vw, 120px);
+    }
+
+    .footer-top {
+        align-items: center;
+        gap: 40px;
+        padding-bottom: 35px;
+        margin-bottom: 30px;
+    }
+
+    .footer-top h2 {
+        font-size: clamp(30px, 2.6vw, 46px);
+        line-height: 1.3;
+        letter-spacing: -1px;
+    }
+
+    .footer-logo {
+        flex-shrink: 0;
+    }
+
+    .footer-logo img {
+        display: block;
+        width: 160px;
+        height: auto;
+    }
+
+    .footer-middle {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+
+    .Univ-name-KR {
+        font-size: 23px;
+        line-height: 1.7;
+    }
+
+    .Univ-name-EN {
+        font-size: 19px;
+    }
+
+    .copy,
+    .copy-KR,
+    .copy-EN {
+        font-size: 13px;
+        line-height: 1.9;
+        overflow-wrap: break-word;
+    }
+}
