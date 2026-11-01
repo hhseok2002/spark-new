@@ -1035,7 +1035,7 @@ footer {
     }
 
     .about-lead {
-        font-size: clamp(21px, 1.7vw, 28px);
+        font-size: clamp(18px, 1.3vw, 22px);
         line-height: 1.8;
         margin-bottom: 38px;
     }
