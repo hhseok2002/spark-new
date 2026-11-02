@@ -238,9 +238,9 @@ header {
     line-height: 1.4;
     letter-spacing: 0.3px;
 }
-.copy-pink { top: 70%; left: 49%; animation-delay: 1.3s; }
+.copy-pink { top: 80%; left: 49%; animation-delay: 1.3s; }
 .copy-pink p { color: #EB2254; }
-.copy-blue { top: 67%; left: 67%; animation-delay: 1.45s; }
+.copy-blue { top: 77%; left: 67%; animation-delay: 1.45s; }
 .copy-blue p { color: #87C0F0; }
 .square {
     flex-shrink: 0;
@@ -289,11 +289,11 @@ header {
     margin-bottom: 40px;
 }
 .overview h2 {
-    font-size: 20px;
+    font-size: clamp(12px, 3.5vw, 15px);
     color: #787878;
 }
 .overview h1 {
-    font-size: clamp(20px, 5.5vw, 25px);
+    font-size: clamp(18px, 5vw, 23px);
     color: #EB2254;
     margin-bottom: 20px;
 }
