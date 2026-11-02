@@ -465,6 +465,9 @@ footer {
     .archive-title {
         min-width: 0;
     }
+    .archive-title h1 {
+        font-size: clamp(40px, 5vw, 50px);
+    }
 
     .eyebrow {
         font-size: 13px;
