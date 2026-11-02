@@ -473,7 +473,7 @@ footer {
     .archive-header h1 {
         margin-top: 8px;
         font-size: clamp(32px, 5vw, 64px);
-        fonr-weight: 900;
+        font-weight: 900;
         line-height: 3;
         letter-spacing: -2px;
     }
