@@ -176,6 +176,10 @@ header {
     font-size: 20px;
     display: block;
 }
+.main p {
+    font-size: 11px;
+    color: #adadad;
+}
 .text {
     width: 100%;
     padding: 0 20px;
@@ -665,8 +669,8 @@ footer {
     }
 
     .main p {
-        font-size: 15px;
-        color: #a8a7a7;
+        font-size: 17px;
+        color: #787878;
     }
 
     /* 작품 설명 */
