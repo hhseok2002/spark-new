@@ -465,18 +465,17 @@ footer {
     .archive-title {
         min-width: 0;
     }
-    .archive-title h1 {
-        font-size: clamp(40px, 5vw, 50px);
-    }
 
     .eyebrow {
         font-size: 13px;
     }
 
     .archive-header h1 {
-        font-size: clamp(32px, 5.5vw, 40px);
-        line-height: 1.2;
-        letter-spacing: -1.5px;
+        margin-top: 8px;
+        font-size: clamp(32px, 5vw, 64px);
+        fonr-weight: 900;
+        line-height: 1;
+        letter-spacing: -2px;
     }
 
     .archive-header p {
