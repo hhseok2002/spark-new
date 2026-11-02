@@ -165,7 +165,7 @@ header {
 .l-s { width: 32%; top: 5%; left: -1%; --r: -12deg; animation-delay: 0.35s, 1.2s; }
 .l-p { width: 31%; top: 15%; left: 22%; --r: 0deg; animation-delay: 0.45s, 1.3s; }
 .l-a { width: 32%; top: 0%; left: 42%; --r: -15deg; animation-delay: 0.55s, 1.4s; }
-.l-r { width: 38%; top: 40%; left: 32%; --r: 5deg; animation-delay: 0.65s, 1.5s; }
+.l-r { width: 38%; top: 43%; left: 32%; --r: 5deg; animation-delay: 0.65s, 1.5s; }
 .l-k { width: 50%; top: 30%; left: 50%; --r: -8deg; animation-delay: 0.75s, 1.6s; }
 
 @keyframes letterPop {
