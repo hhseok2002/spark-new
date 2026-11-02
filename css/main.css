@@ -293,7 +293,7 @@ header {
     color: #787878;
 }
 .overview h1 {
-    font-size: clamp(20px, 4vw, 30px);
+    font-size: clamp(20px, 5.5vw, 25px);
     color: #EB2254;
     margin-bottom: 20px;
 }
