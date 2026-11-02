@@ -248,7 +248,7 @@ header {
     height: 10px;
 }
 .square.pink { background: #EB2254; }
-.square.blue { background: #87C0F0; }
+.square.blue { background: #87D0F0; }
 
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
