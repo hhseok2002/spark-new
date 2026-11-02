@@ -474,7 +474,7 @@ footer {
         margin-top: 8px;
         font-size: clamp(32px, 5vw, 64px);
         fonr-weight: 900;
-        line-height: 1;
+        line-height: 3;
         letter-spacing: -2px;
     }
 
