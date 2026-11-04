@@ -1243,7 +1243,8 @@ footer {
 
     /* 지도 */
     .map {
-        height: clamp(420px, 32vw, 560px);
+        width: 100%;
+        height: auto;
         margin-bottom: 45px;
     }
 
