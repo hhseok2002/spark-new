@@ -385,40 +385,64 @@ postForm.addEventListener("submit", async event => {
   }
 
   submitPost.disabled = true;
-  formStatus.textContent = "게시물을 등록하고 있습니다...";
 
   let uploadedImageRef = null;
+  let uploadCompleted = false;
+  let postSaved = false;
 
   try {
+    // 1. 이미지 압축
     formStatus.textContent = "이미지를 압축하고 있습니다...";
 
-const optimizedFile = await compressImage(file);
+    const optimizedFile = await compressImage(file);
 
-const extension =
-  optimizedFile.type === "image/webp" ? "webp" :
-  optimizedFile.type === "image/png" ? "png" : "jpg";
+    console.log("압축 완료:", optimizedFile.size, "bytes");
 
-const fileName = crypto.randomUUID() + "." + extension;
-const imagePath = `moments/${fileName}`;
+    // 2. 파일 경로 생성
+    const extension =
+      optimizedFile.type === "image/webp" ? "webp" :
+      optimizedFile.type === "image/png" ? "png" : "jpg";
 
-uploadedImageRef = ref(storage, imagePath);
+    const fileName = crypto.randomUUID() + "." + extension;
+    const imagePath = `moments/${fileName}`;
 
-formStatus.textContent = "이미지를 업로드하고 있습니다...";
+    uploadedImageRef = ref(storage, imagePath);
 
-await uploadBytes(uploadedImageRef, optimizedFile, {
-  contentType: optimizedFile.type
-});
+    // 3. 이미지 업로드
+    formStatus.textContent = "이미지를 업로드하고 있습니다...";
+
+    await uploadBytes(uploadedImageRef, optimizedFile, {
+      contentType: optimizedFile.type
+    });
+
+    uploadCompleted = true;
+    console.log("Storage 업로드 완료");
+
+    // 4. 이미지 URL 가져오기
+    formStatus.textContent = "이미지 주소를 가져오는 중입니다...";
 
     const imageUrl = await getDownloadURL(uploadedImageRef);
 
-    await addDoc(collection(db, "moments"), {
-      text,
-      imageUrl,
-      imagePath,
-      authorId: currentAdmin.uid,
-      createdAt: serverTimestamp()
-    });
+    console.log("이미지 URL 가져오기 완료");
 
+    // 5. Firestore 저장
+    formStatus.textContent = "게시물 정보를 저장하고 있습니다...";
+
+    const savedPost = await addDoc(
+      collection(db, "moments"),
+      {
+        text,
+        imageUrl,
+        imagePath,
+        authorId: currentAdmin.uid,
+        createdAt: serverTimestamp()
+      }
+    );
+
+    postSaved = true;
+    console.log("Firestore 저장 완료:", savedPost.id);
+
+    // 6. 저장 성공 후 초기화
     postForm.reset();
     imagePreview.hidden = true;
 
@@ -431,19 +455,21 @@ await uploadBytes(uploadedImageRef, optimizedFile, {
     writeModal.hidden = true;
 
   } catch (error) {
-    console.error(error);
+    console.error("게시물 등록 오류:", error);
 
-    // 글 저장에 실패하면 업로드된 이미지 정리 시도
-    if (uploadedImageRef) {
+    formStatus.textContent =
+      "등록 실패: " + (error.code || error.message);
+
+    // 업로드는 완료됐지만 게시물 저장이 실패한 경우 정리
+    if (uploadCompleted && !postSaved && uploadedImageRef) {
       try {
         await deleteObject(uploadedImageRef);
+        console.log("미등록 이미지 정리 완료");
       } catch (cleanupError) {
         console.warn("이미지 정리 실패:", cleanupError);
       }
     }
 
-    formStatus.textContent =
-      "게시물 등록에 실패했습니다. Firebase 설정을 확인해주세요.";
   } finally {
     submitPost.disabled = false;
   }
