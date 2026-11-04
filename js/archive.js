@@ -9,7 +9,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
 import {
-  initializeFirestore,
+  getFirestore,
   collection,
   addDoc,
   deleteDoc,
@@ -61,9 +61,7 @@ const ADMIN_UIDS = [
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = initializeFirestore(app, {
-  experimentalForceLongPolling: true
-});
+const db = getFirestore(app);
 const storage = getStorage(app);
 
 /* 3. HTML 요소 */
@@ -326,7 +324,6 @@ function makePostBlock(post, postId) {
 /* 12. 게시물 목록 불러오기 */
 const postsQuery = query(
   collection(db, "moments"),
-  orderBy("createdAt", "desc"),
   limit(60)
 );
 
