@@ -48,7 +48,7 @@ const firebaseConfig = {
 */
 const ADMIN_UIDS = [
     "3jpQX4wHk5eZxrRVc3rvctolqHo2",
-    "3Gcidpsv5uVJTWnRFEMmnk7WEbu2",reject
+    "3Gcidpsv5uVJTWnRFEMmnk7WEbu2",
     "I35Ox3ExDShrs1fsDAzqjY9ib732",
     "bv7XlGXs5bRsUEMFekLcYcldRQ63",
     "qyKZU4UMXzOaGWDX3AAasZDOejX2",
