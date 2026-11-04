@@ -112,11 +112,8 @@ async function compressImage(file) {
     );
   });
 
-  return new File(
-    [blob],
-    "archive.webp",
-    { type: "image/webp" }
-  );
+  
+  return blob.size < file.size ? blob : file;
 }
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
@@ -393,20 +390,18 @@ postForm.addEventListener("submit", async event => {
   let uploadedImageRef = null;
 
   try {
-    const extension = {
-      "image/jpeg": "jpg",
-      "image/png": "png",
-      "image/webp": "webp"
-    }[file.type];
-
-    const fileName = crypto.randomUUID() + "." + extension;
-    const imagePath = `moments/${fileName}`;
-
-    uploadedImageRef = ref(storage, imagePath);
-
-    formStatus.textContent = "이미지를 최적화하고 있습니다...";
+    formStatus.textContent = "이미지를 압축하고 있습니다...";
 
 const optimizedFile = await compressImage(file);
+
+const extension =
+  optimizedFile.type === "image/webp" ? "webp" :
+  optimizedFile.type === "image/png" ? "png" : "jpg";
+
+const fileName = crypto.randomUUID() + "." + extension;
+const imagePath = `moments/${fileName}`;
+
+uploadedImageRef = ref(storage, imagePath);
 
 formStatus.textContent = "이미지를 업로드하고 있습니다...";
 
