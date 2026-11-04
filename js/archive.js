@@ -61,7 +61,7 @@ const ADMIN_UIDS = [
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore(app);
+const db = getFirestore(app, "default");
 async function testFirestoreConnection() {
   console.log("Firestore 연결 테스트 시작");
 
