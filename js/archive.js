@@ -18,7 +18,6 @@ import {
   orderBy,
   limit,
   onSnapshot,
-  getDocsFromServer,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
@@ -62,25 +61,6 @@ const ADMIN_UIDS = [
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app, "default");
-async function testFirestoreConnection() {
-  console.log("Firestore 연결 테스트 시작");
-
-  try {
-    const snapshot = await getDocsFromServer(
-      collection(db, "moments")
-    );
-
-    console.log("Firestore 연결 성공");
-    console.log("문서 개수:", snapshot.size);
-
-  } catch (error) {
-    console.error("Firestore 연결 실패");
-    console.error("오류 코드:", error.code);
-    console.error("오류 메시지:", error.message);
-  }
-}
-
-testFirestoreConnection();
 const storage = getStorage(app);
 
 /* 3. HTML 요소 */
@@ -343,16 +323,9 @@ function makePostBlock(post, postId) {
 /* 12. 게시물 목록 불러오기 */
 const postsQuery = query(
   collection(db, "moments"),
+  orderBy("createdAt", "desc"),
   limit(60)
 );
-
-getDocsFromServer(postsQuery)
-  .then(snapshot => {
-    console.log("서버 직접 조회 성공:", snapshot.size);
-  })
-  .catch(error => {
-    console.error("서버 직접 조회 실패:", error.code, error.message);
-  });
 
 let unsubscribePosts = null;
 
@@ -364,9 +337,6 @@ function loadPosts() {
   unsubscribePosts = onSnapshot(
     postsQuery,
     snapshot => {
-      console.log("게시물 조회 성공:", snapshot.size);
-      console.log("서버 데이터 여부:", !snapshot.metadata.fromCache);
-      console.log("미완료 쓰기:", snapshot.metadata.hasPendingWrites);
       postList.replaceChildren();
 
       snapshot.forEach(postDoc => {
