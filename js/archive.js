@@ -48,7 +48,7 @@ const firebaseConfig = {
 */
 const ADMIN_UIDS = [
     "3jpQX4wHk5eZxrRVc3rvctolqHo2",
-    "3Gcidpsv5uVJTWnRFEMmnk7WEbu2",
+    "3Gcidpsv5uVJTWnRFEMmnk7WEbu2",reject
     "I35Ox3ExDShrs1fsDAzqjY9ib732",
     "bv7XlGXs5bRsUEMFekLcYcldRQ63",
     "qyKZU4UMXzOaGWDX3AAasZDOejX2",
@@ -87,6 +87,37 @@ const textInput = document.getElementById("postText");
 
 const postList = document.getElementById("postList");
 const emptyMessage = document.getElementById("emptyMessage");
+
+async function compressImage(file) {
+  const bitmap = await createImageBitmap(file);
+
+  const maxWidth = 1600;
+  const scale = Math.min(1, maxWidth / bitmap.width);
+
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.round(bitmap.width * scale);
+  canvas.height = Math.round(bitmap.height * scale);
+
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+  bitmap.close();
+
+  const blob = await new Promise((resolve, reject) => {
+    canvas.toBlob(
+      result => result ? resolve(result) : reject(
+        new Error("이미지 압축 실패")
+      ),
+      "image/webp",
+      0.8
+    );
+  });
+
+  return new File(
+    [blob],
+    "archive.webp",
+    { type: "image/webp" }
+  );
+}
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const ALLOWED_TYPES = [
@@ -373,9 +404,15 @@ postForm.addEventListener("submit", async event => {
 
     uploadedImageRef = ref(storage, imagePath);
 
-    await uploadBytes(uploadedImageRef, file, {
-      contentType: file.type
-    });
+    formStatus.textContent = "이미지를 최적화하고 있습니다...";
+
+const optimizedFile = await compressImage(file);
+
+formStatus.textContent = "이미지를 업로드하고 있습니다...";
+
+await uploadBytes(uploadedImageRef, optimizedFile, {
+  contentType: optimizedFile.type
+});
 
     const imageUrl = await getDownloadURL(uploadedImageRef);
 
