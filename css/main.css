@@ -1161,7 +1161,7 @@ footer {
 
 /* S: 왼쪽 위 */
 .spark-title .l-s {
-    width:34%;
+    width:32%;
     top: 13%;
     left: 28%;
     --r: -18deg;
@@ -1194,8 +1194,8 @@ footer {
 /* K: 오른쪽 아래 */
 .spark-title .l-k {
     width: 40%;
-    top: 38%;
-    left: 90%;
+    top: 35%;
+    left: 94%;
     --r: -15deg;
 }
 
@@ -1222,17 +1222,17 @@ footer {
     .main-hero .deco-3 {
         width: clamp(90px, 8vw, 150px);
         top: 40%;
-        left: 59%;
+        left: 61%;
     }
 
     .px-1 {
         top: 18%;
-        left: 38%;
+        left: 58%;
     }
 
     .px-2 {
         top: 19%;
-        left: 40%;
+        left: 60%;
     }
 
     .px-3 {
@@ -1241,13 +1241,13 @@ footer {
     }
 
     .px-4 {
-        bottom: 19%;
+        bottom: 30%;
         left: 20%;
     }
 
     .dot-red {
-        top: 62%;
-        left: 64%;
+        top: 52%;
+        left: 78%;
     }
 
     .dot-white {
