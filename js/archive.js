@@ -18,6 +18,7 @@ import {
   orderBy,
   limit,
   onSnapshot,
+  getDocsFromServer,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
@@ -328,6 +329,14 @@ const postsQuery = query(
   orderBy("createdAt", "desc"),
   limit(60)
 );
+
+getDocsFromServer(postsQuery)
+  .then(snapshot => {
+    console.log("서버 직접 조회 성공:", snapshot.size);
+  })
+  .catch(error => {
+    console.error("서버 직접 조회 실패:", error.code, error.message);
+  });
 
 let unsubscribePosts = null;
 
