@@ -1210,7 +1210,7 @@ footer {
     .main-hero .deco-1 {
         width: clamp(70px, 6vw, 115px);
         top: 35%;
-        left: 18%;
+        left: 20%;
     }
 
     .main-hero .deco-2 {
