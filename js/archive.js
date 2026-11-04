@@ -62,6 +62,25 @@ const ADMIN_UIDS = [
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+async function testFirestoreConnection() {
+  console.log("Firestore 연결 테스트 시작");
+
+  try {
+    const snapshot = await getDocsFromServer(
+      collection(db, "moments")
+    );
+
+    console.log("Firestore 연결 성공");
+    console.log("문서 개수:", snapshot.size);
+
+  } catch (error) {
+    console.error("Firestore 연결 실패");
+    console.error("오류 코드:", error.code);
+    console.error("오류 메시지:", error.message);
+  }
+}
+
+testFirestoreConnection();
 const storage = getStorage(app);
 
 /* 3. HTML 요소 */
