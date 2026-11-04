@@ -9,7 +9,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
 import {
-  getFirestore,
+  initializeFirestore,
   collection,
   addDoc,
   deleteDoc,
@@ -60,7 +60,9 @@ const ADMIN_UIDS = [
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore(app);
+const db = initializeFirestore(app, {
+  experimentalForceLongPolling: true
+});
 const storage = getStorage(app);
 
 /* 3. HTML 요소 */
@@ -337,6 +339,9 @@ function loadPosts() {
   unsubscribePosts = onSnapshot(
     postsQuery,
     snapshot => {
+      console.log("게시물 조회 성공:", snapshot.size);
+      console.log("서버 데이터 여부:", !snapshot.metadata.fromCache);
+      console.log("미완료 쓰기:", snapshot.metadata.hasPendingWrites);
       postList.replaceChildren();
 
       snapshot.forEach(postDoc => {
