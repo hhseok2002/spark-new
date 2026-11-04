@@ -1117,14 +1117,14 @@ footer {
     /* burst 원본 비율을 유지하며 전체 표시 */
     /* burst를 왼쪽으로 이동 */
     .main-hero .burst-pink {
-        inset: 250px 18% 24px -18%;
+        inset: 250px 18% 24px 5%;
         width: 100%;
         height: calc(100% - 124px);
         margin: 0;
 
         object-fit: contain;
         object-position: center;
-        scale: 2;
+        scale: 2.5;
         transform-origin: center;
         z-index: 0;
     }
@@ -1161,42 +1161,42 @@ footer {
 
 /* S: 왼쪽 위 */
 .spark-title .l-s {
-    width: 27%;
+    width:34%;
     top: 13%;
-    left: 5%;
+    left: 28%;
     --r: -18deg;
 }
 
 /* P: 중앙 아래 */
 .spark-title .l-p {
-    width: 25%;
-    top: 39%;
-    left: 27%;
-    --r: 10deg;
+    width: 30%;
+    top: 25%;
+    left: 57%;
+    --r: 0deg;
 }
 
 /* A: 오른쪽 위 */
 .spark-title .l-a {
     width: 24%;
-    top: 10%;
-    left: 45%;
-    --r: -3deg;
+    top: 15%;
+    left: 82%;
+    --r: -20deg;
 }
 
 /* R: 아래 중앙 */
 .spark-title .l-r {
-    width: 24%;
+    width: 30%;
     top: 51%;
-    left: 50%;
-    --r: 18deg;
+    left: 80%;
+    --r: -5deg;
 }
 
 /* K: 오른쪽 아래 */
 .spark-title .l-k {
-    width: 28%;
+    width: 40%;
     top: 38%;
-    left: 68%;
-    --r: -30deg;
+    left: 90%;
+    --r: -15deg;
 }
 
     /* 장식 */
@@ -1210,7 +1210,7 @@ footer {
     .main-hero .deco-1 {
         width: clamp(70px, 6vw, 115px);
         top: 35%;
-        left: 8%;
+        left: 18%;
     }
 
     .main-hero .deco-2 {
@@ -1222,7 +1222,7 @@ footer {
     .main-hero .deco-3 {
         width: clamp(90px, 8vw, 150px);
         top: 40%;
-        left: 80%;
+        left: 59%;
     }
 
     .px-1 {
@@ -1247,7 +1247,7 @@ footer {
 
     .dot-red {
         top: 62%;
-        left: 82%;
+        left: 64%;
     }
 
     .dot-white {
@@ -1268,14 +1268,14 @@ footer {
 
     .main-hero .copy-pink {
         top: auto;
-        bottom: 8%;
-        left: 49%;
+        bottom: 43%;
+        left: 9%;
     }
 
     .main-hero .copy-blue {
         top: auto;
-        bottom: 7%;
-        left: 70%;
+        bottom: 37%;
+        left: 83%;
     }
 
     .square {
