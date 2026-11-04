@@ -1161,9 +1161,9 @@ footer {
 
 /* S: 왼쪽 위 */
 .spark-title .l-s {
-    width:32%;
+    width:30%;
     top: 13%;
-    left: 28%;
+    left: 32.5%;
     --r: -18deg;
 }
 
