@@ -1070,7 +1070,7 @@ footer {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 40px;
+        gap: 0; !important;
 
         opacity: 1;
         visibility: visible;
@@ -1080,6 +1080,10 @@ footer {
         background: transparent;
         text-align: left;
         transition: none;
+    }
+
+    header .menu > a + a {
+        margin-left: 40px !important;
     }
 
     header .menu a {
