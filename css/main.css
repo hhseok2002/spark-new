@@ -1116,18 +1116,42 @@ footer {
 
     /* burst 원본 비율을 유지하며 전체 표시 */
     /* burst를 왼쪽으로 이동 */
-    .main-hero .burst-pink {
-        inset: 250px 18% 24px 5%;
-        width: 100%;
-        height: calc(100% - 124px);
-        margin: 0;
+     .main-hero .burst-pink {
+        position: absolute;
 
+        /* 위치 */
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+
+        /* 크기 */
+        width: 100%;
+        height: auto;
+        max-width: none;
+
+        margin: 0;
         object-fit: contain;
-        object-position: center;
-        scale: 2.5;
-        transform-origin: center;
+
+        /* 확대 및 중앙 정렬 */
+        scale: 1;
+        transform-origin: center center;
+
         z-index: 0;
     }
+
+    @keyframes burstIn {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.3);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+}
 
 /* SPARK 전체 영역 */
 .main-hero .spark-title {
