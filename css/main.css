@@ -1151,7 +1151,6 @@ footer {
             transform: translate(-50%, -50%) scale(1);
         }
     }
-}
 
 /* SPARK 전체 영역 */
 .main-hero .spark-title {
@@ -1160,8 +1159,8 @@ footer {
     bottom: auto;
     left: 30%;
 
-    width: min(54%, 920px);
-    height: auto;
+    width: min(54vw, 920px);
+    height: min(47.59vw, 811px);
     aspect-ratio: 413 / 364;
 
     display: block;
