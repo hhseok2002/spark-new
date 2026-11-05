@@ -1070,7 +1070,7 @@ footer {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: clamp(24px, 3vw, 56px);
+        gap: 40px;
 
         opacity: 1;
         visibility: visible;
