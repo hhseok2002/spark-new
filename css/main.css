@@ -1070,7 +1070,7 @@ footer {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 0; !important;
+        gap: 0 !important;
 
         opacity: 1;
         visibility: visible;
