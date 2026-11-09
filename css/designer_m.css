@@ -603,14 +603,26 @@ footer {
     }
 
     /* 영상 */
+    /* 유튜브 영상 */
     .youtube {
-        width: calc(100% - 120px);
-        max-width: 1320px;
-        margin: 55px auto 0;
+        position: relative;
+        width: 100%;
+        height: auto;
         aspect-ratio: 16 / 9;
-        overflow: hidden;
-        border-radius: 18px;
+        margin-top: 30px;
         background-color: #eee;
+        overflow: hidden;
+        animation: fadeIn 0.4s ease both;
+    }
+
+    .youtube iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 0;
     }
     .youtube p {
         left: 44%;
