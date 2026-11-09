@@ -158,14 +158,27 @@ header {
     border: none;
 }
 
-.youtube {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    margin-top: 30px;
-    background-color: #eee;
-    animation: fadeIn 0.4s ease both;
-}
+/* 유튜브 영상 */
+    .youtube {
+        position: relative;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin-top: 30px;
+        background-color: #eee;
+        overflow: hidden;
+        animation: fadeIn 0.4s ease both;
+    }
+
+    .youtube iframe {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 0;
+    }
 .youtube p {
     position: absolute;
     top: 50%;
@@ -174,9 +187,6 @@ header {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-.youtube iframe {
-    display: block;
 }
 
 .text {
@@ -602,7 +612,6 @@ footer {
         border-radius: 30px;
     }
 
-    /* 영상 */
     /* 유튜브 영상 */
     .youtube {
         position: relative;
